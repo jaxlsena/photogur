@@ -1,19 +1,11 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @image.name %>
-</p>
+<div style="margin: auto">
+  <h1 style="text-align:center; margin: 50px 0 50px 0;"><strong>Image Name</strong></h1>
+  <h4> <%= @image.name %></h4>
+    <!-- <strong>Url:</strong> -->
+  <!-- <h4><%= image_tag @image.url %></h4> -->
+  <h4><%= image_tag @image.url %></h4>
+</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @image.url %>
-</p>
-
-<p>
-  <strong>Album:</strong>
-  <%= @image.album %>
-</p>
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+ 

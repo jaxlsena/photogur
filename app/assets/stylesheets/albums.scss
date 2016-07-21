@@ -1,3 +1,39 @@
 // Place all the styles related to the albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .album-title {
+//   text-align: center;
+// }
+
+.album-pics {
+  width: 50%;
+  height: 50%;
+}
+
+#album-list {
+  text-align: center;
+}
+
+#album-list h1 {
+  text-align: center;
+  // color: white;
+}
+
+#album-list table {
+    margin: auto;
+    color: #c2c2d6;
+}
+.album-title {
+  text-align: center;
+  color: white;
+}
+
+#user-albums {
+  width: 200px;
+}
+
+
+.album-title {
+  padding: 25px 0 15px 0;
+}

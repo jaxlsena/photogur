@@ -12,14 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :image_name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :attachment %>
-    <%= f.file_field :attachment %>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
   </div>
+
+  <!-- <div style="margin: auto; text-align: center" class="field">
+    <%= f.label :attachment %>
+    <p style="margin: auto;"><%= f.file_field :attachment %></p>
+  </div> -->
 
   <div class="field">
     <%= f.hidden_field :album_id, value: @album.id %>
@@ -27,5 +32,7 @@
 
   <div class="actions">
     <%= f.submit %>
+      <!-- <#% redirect_to images_path %> -->
   </div>
+
 <% end %>

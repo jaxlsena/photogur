@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#log_in bootstrap
+gem 'devise-bootstrap-views'
+
 gem "paperclip", "~> 5.0.0"
 
 gem 'hirb'

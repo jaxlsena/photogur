@@ -4,12 +4,13 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Image.all.order(created_at: :desc)
   end
 
   # GET /images/1
   # GET /images/1.json
   def show
+
   end
 
   # GET /images/new
@@ -68,6 +69,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:name, :attachment, :album_id)
+      params.require(:image).permit(:name, :attachment, :url, :album_id)
     end
 end

@@ -25,17 +25,21 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
+    unless current_user.nil?
     @album = Album.new(album_params)
     @album.user_id = current_user.id
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
+        format.html { redirect_to @album }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
+  else
+    redirect_to root_path, notice: 'please sign in to make and album'
+  end
   end
 
   # PATCH/PUT /albums/1
@@ -43,7 +47,7 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+        format.html { redirect_to @album, notice: "Album was successfully updated." }
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
@@ -73,3 +77,4 @@ class AlbumsController < ApplicationController
       params.require(:album).permit(:title, :image, :user_id)
     end
 end
+#notice: "Album #{@album.title}  was successfully created."

@@ -1,2 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1 style="text-align:center; margin: 50px 0 50px 0;"><strong >RECENT IMAGES ON WYNGUR</strong></h1>
+
+<div class="container">
+  <div class="row">
+    <% @images.each do |image| %>
+      <div class="col-md-4"><%= image_tag image.url, size: "300x180" %></div>
+    <% end %>
+  </div>
+</div>
